@@ -9,9 +9,9 @@
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -132,10 +132,8 @@ h1 {
 }
 
 #card1 {
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.7),
-            rgba(255, 255, 255, 0.7)),
-        url("images/luonto.jpg");
+    position: relative;
+    background-image: url("images/merta.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -144,16 +142,28 @@ h1 {
     padding: 20px;
 }
 
+#card1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0.5;
+}
+
+#card1 > * {
+    position: relative;
+}
+
 .grayscale-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    filter: grayscale(100%);
+  display: block;
+  width: 300px;
+  height: auto;
+  filter: grayscale(100%);
 }
 
 .card-image {
     display: block;
-    max-width: 100%;
+    max-width: 100%; 
     height: auto;
 }
 
