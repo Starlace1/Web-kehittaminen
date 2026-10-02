@@ -1,0 +1,68 @@
+/* Julia Ridal */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf2f8;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+}
+
+.card {
+    width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: #24527a;
+    font-size: 44px;
+    margin: -40px -40px 40px -40px;
+    padding: 30px;
+    border-radius: 12px 12px 0 0;
+}
+
+h2 {
+    color: #2c5e92;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #d6e4ef;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #2c5e92;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: #24527a;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
