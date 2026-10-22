@@ -1,5 +1,4 @@
 /* Julia Ridal */
-
 * {
     box-sizing: border-box;
 }
@@ -15,7 +14,6 @@ body {
 .card {
     width: 100%;
     max-width: 1000px;
-    box-sizing: border-box;
     margin: 0 auto;
     background-color: white;
     padding: 40px;
@@ -47,14 +45,28 @@ h3 {
     margin-bottom: 10px;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
 nav a {
-    color: #24527a;
+    display: inline-block;
+    background-color: #24527a;
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background-color: #2c5e92;
 }
 
 nav a:focus-visible,
