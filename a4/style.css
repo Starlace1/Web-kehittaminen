@@ -1,0 +1,128 @@
+/* Julia Ridal */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eaf2f8;
+    color: #333;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: #24527a;
+    font-size: 44px;
+    margin: -40px -40px 40px -40px;
+    padding: 30px;
+    border-radius: 12px 12px 0 0;
+}
+
+h2 {
+    color: #2c5e92;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #d6e4ef;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #2c5e92;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #24527a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:focus-visible,
+.gallery-item a:focus-visible {
+    outline: 3px solid #24527a;
+    outline-offset: 4px;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.gallery-item {
+    min-width: 0;
+    padding: 15px;
+    background-color: #f4f8fb;
+    border-radius: 10px;
+}
+
+.gallery-item p {
+    font-size: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    max-width: none;
+    margin: 20px auto 0;
+}
+
+@media (max-width: 750px) {
+    body {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 34px;
+        margin: -20px -20px 30px -20px;
+        padding: 25px 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    h2 {
+        margin-top: 25px;
+    }
+}
