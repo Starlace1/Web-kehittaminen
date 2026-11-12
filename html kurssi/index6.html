@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fi">
+<otsikko>
+    <meta charset="UTF-8">
+    <title>Löydä maailmasi</title>
+
+    <link rel="icon" href="https://edube.org/uploads/media/default/0001/04/web-favicon.png" type="image/png">
+
+    <script src="script.js"></script>
+    </pää>
+    <runko>
+        <h1>Löydä maailmasi</h1>
+        <p>Napsauta painiketta saadaksesi lisätietoja mantereesta, jolla olet, ja joistakin kuuluisista
+            maantieteellisistä kohteista.</p>
+
+        <button id="discoverLocation">Löydä sijainti</button>
+
+        <img src="https://edube.org/uploads/media/default/0001/04/continents.jpg" usemap="#kuvakartta"
+            alt="Maailmankartta">
+        <map name="kuvakartta">
+
+            <area target="" alt="Pohjois-Amerikka" title="Pohjois-Amerikka" id="pohjois-amerikka" coords="386,283,41,17"
+                shape="rect" href="javascript:void(0);">
+            <area target="" alt="Etelä-Amerikka" title="Etelä-Amerikka" id="etelä-amerikka" coords="209,501,358,288"
+                shape="rect" href="javascript:void(0);">
+            <area target="" alt="Eurooppa" title="Eurooppa" id="europe" coords="391,68,505,217" shape="rect"
+                href="javascript:void(0);">
+            <area target="" alt="Afrikka" title="Afrikka" id="africa" ​​coords="533,217,387,448" shape="rect"
+                href="javascript:void(0);">
+            <area target="" alt="Aasia" title="Aasia" id="aasia" coords="893,153,506,1" shape="rect"
+                href="javascript:void(0);">
+            <area target="" alt="Australia ja Oseania" title="Australia ja Oseania" id="australia-ja-oseania"
+                coords="679,353,872,480" shape="rect" href="javascript:void(0);">
+            </kartta>
+
+            </body>
+
+</html>
+
+
+<!-- Tiimikaverisi toimittama JavaScript-koodi -->
+
+<skripti>
+    document.addEventListener('DOMContentLoaded', function() {
+    vakio maanosaInfo = {
+    'pohjois-amerikka': {
+    maanosa: 'Pohjois-Amerikka',
+    joki: 'Mississippijoki',
+    vuori: 'Denali',
+    maamerkit: Grand Canyon, Vapaudenpatsas, Niagaran putoukset
+    },
+    'etelä-amerikka': {
+    maanosa: 'Etelä-Amerikka',
+    joki: 'Amazonjoki',
+    vuori: 'Aconcagua',
+    maamerkit: 'Machu Picchu, Galapagossaaret'
+    },
+    'eurooppa': {
+    maanosa: 'Eurooppa',
+    joki: 'Tonava',
+    vuori: 'Mont Blanc',
+    maamerkit: Eiffel-torni, Colosseum, Ateenan akropolis
+    },
+    'afrikka': {
+    maanosa: 'Afrikka',
+    joki: 'Niili',
+    vuori: 'Kilimanjaro',
+    maamerkit: 'Sfinksi, Pöytävuori'
+    },
+    'aasiassa': {
+    manner: 'Aasia',
+    joki: 'Jangtse-joki',
+    vuori: 'Mount Everest',
+    maamerkit: Kiinan muuri, Petra
+    },
+    'australia-ja-oseania': {
+    maanosa: 'Australia ja Oseania',
+    joki: 'Murray-joki',
+    vuori: 'Kosciuszkon vuori',
+    maamerkit: Sydneyn oopperatalo, Iso valliriutta, Uluru
+    }
+    };
+
+    funktio displayContinentInfo(mannerId) {
+    const info = maanosanTiedot[maanosanId];
+    jos (tiedot) {
+    alert(`Manner: ${info.continent}\nJoki: ${info.river}\nVuori: ${info.mountain}\nMaamerkit: ${info.landmarks}`);
+    } muu {
+    alert('Tietoja ei saatavilla');
+    }
+    }
+
+    document.querySelectorAll('alue').forEach(alue => {
+    area.addEventListener('klikkaus', function() {
+    const maanosanId = this.id;
+    displayContinentInfo(mannerId);
+    });
+    });
+
+    const discoverLocationButton = document.getElementById('discoverLocation');
+
+    discoverLocationButton.addEventListener('napsauta', () => {
+    jos ("geolocation" navigaattorissa) {
+    navigator.geolocation.getCurrentPosition((sijainti) => {
+    vakio leveysaste = sijainti.koordinaatit.leveysaste;
+    vakio pituusaste = sijainti.koordinaatit.pituusaste;
+    const mannerId = determineContinentByGeo(leveysaste, pituusaste);
+    displayContinentInfo(mannerId);
+    }, (virhe) => {
+    alert("Virhe maantieteellisen sijainnin hakemisessa: " + error.message);
+    });
+    } muu {
+    alert("Selaimesi ei tue maantieteellistä sijaintia.");
+    }
+    });
+
+    funktio determineContinentByGeo(leveysaste, pituusaste) {
+    jos (leveysaste > 35 && pituusaste > -10 && pituusaste < 40) { palauta 'eurooppa' ; } muuten jos (leveysaste < 0 &&
+        pituusaste> -80 && pituusaste < -34) { return 'etelä-amerikka' ; } muuten jos (leveysaste> 0 && pituusaste >
+            -130 && pituusaste < -70) { return 'pohjois-amerikka' ; } muuten jos (leveysaste> 5 && leveysaste < 60 &&
+                    pituusaste> 40 && pituusaste < 180) { return 'aasian' ; } muuten jos (leveysaste> -35 && leveysaste
+                        < 35 && pituusaste> 10 && pituusaste < 50) { palauta 'afrikka' ; } muuten jos (leveysaste < -10
+                                && pituusaste> 110 && pituusaste < 180) { return 'australia-ja-oseania' ; }
+                                    alert("Mannerta ei voitu määrittää sijaintisi perusteella."); return null; //
+                                    Varamenetelmä sijainneille, joita ei ole käsitelty } }); </script>
