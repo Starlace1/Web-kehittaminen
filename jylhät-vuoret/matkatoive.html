@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jylhät Vuoret - Matkatoive</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Jylhät Vuoret</a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Etusivu</a></li>
+                <li><a href="matkainfo.html">Matkainfo</a></li>
+                <li><a href="matkatoive.html" class="active">Matkatoive</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <h1>Jätä matkatoive</h1>
+
+        <p>Tämä lomake on harjoitus.</p>
+
+        <form>
+
+            <label for="email">Sähköposti</label>
+            <input type="email" id="email" name="email" required>
+            <p class="error-message">Tarkista sähköpostiosoitteen muoto.</p>
+
+            <label for="destination">Matkakohde</label>
+            <select id="destination" name="destination" required>
+                <option value="">Valitse kohde</option>
+                <option value="Lofootit">Lofootit</option>
+                <option value="Sveitsin Alpit">Sveitsin Alpit</option>
+                <option value="Dolomiitit">Dolomiitit</option>
+            </select>
+
+            <label for="date">Lähtöpäivä</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="travelers">Matkustajien määrä</label>
+            <input type="number" id="travelers" name="travelers" min="1" max="8" required>
+
+            <button type="submit">Lähetä matkatoive</button>
+
+        </form>
+
+        <section>
+            <h2>Yhteystiedot</h2>
+            <p>Jylhät Vuoret</p>
+            <p>Sähköposti: info@jylhatvuoret.fi</p>
+            <p>Puhelinnumero: 040 123 4567</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Jylhät Vuoret</p>
+        <p>info@jylhatvuoret.fi</p>
+        <p>040 123 4567</p>
+    </footer>
+
+</body>
+
+</html>
